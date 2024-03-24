@@ -1,0 +1,4 @@
+# allow koyeb to use compose
+FROM koyeb/docker-compose
+
+COPY . /app
