@@ -6,6 +6,8 @@ until python3 manage.py makemigrations; do
 	sleep 1
 done
 
+# add timeout to wait for database
+timeout 30s bash -c 'until echo > /dev/tcp/db/5432; do sleep 1; done'
 echo "Database is ready - executing command"
 
 python3 manage.py migrate

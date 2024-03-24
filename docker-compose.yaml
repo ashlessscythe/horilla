@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: app
     ports:
       - 8000:8000
     restart: unless-stopped
@@ -16,6 +17,7 @@ services:
 
   db:
     image: postgres:16-bullseye
+    container_name: db
     environment:
       POSTGRES_DB: horilla
       POSTGRES_USER: postgres

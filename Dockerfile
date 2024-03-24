@@ -11,6 +11,7 @@ COPY . .
 RUN chmod +x /app/entrypoint.sh
 
 RUN pip install -r requirements.txt
+RUN pip install django==4.1.*
 
 EXPOSE 8000
 
